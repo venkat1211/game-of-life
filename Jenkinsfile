@@ -1,4 +1,5 @@
 node('HRMS&&QA') {
+	//SCM project clone
     stage('git') {
         git 'https://github.com/venkat1211/game-of-life.git'
     }
