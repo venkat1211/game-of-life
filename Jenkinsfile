@@ -1,5 +1,7 @@
 pipeline {
-    agent {label 'HRMS&&QA'}
+    agent {label 'HRMS&&QA'}'
+    triggers {pollSCM('* * * * 1-5')}
+    //triggers {cron('30 * * * 1-5')}
     stages {
         stage('git') {
             steps {
