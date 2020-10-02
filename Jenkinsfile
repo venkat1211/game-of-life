@@ -1,4 +1,4 @@
-node('HRMS&&QA') {
+node('master') {
     properties([pipelineTriggers([corn('30 * * * 1-5')])])
 	//SCM project clone
     stage('git') {
