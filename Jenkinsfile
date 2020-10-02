@@ -1,19 +1,16 @@
-node('HRMS&&QA') {
-	//SCM project clone
-    stage('git') {
-        git 'https://github.com/venkat1211/game-of-life.git'
-    }
+pipeline {
+    agent {label 'HRMS&&QA'}
+    stages {
+        stage('git') {
+            steps {
+                git url:'https://github.com/venkat1211/game-of-life.git', branch:'DeclarativePipeline'
 
-    stage('build') {
-        sh 'mvn clean package'
-    }
-
-    stage('testresults') {
-        junit 'gameoflife-web/target/surefire-reports/*.xml'
-
-    }
-
-    stage('archiveArtifacts') {
-        archiveArtifacts artifacts: 'gameoflife-web/target/*war', followSymlinks: false
+            }
+        }
+        stage('compile') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
     }
 }
