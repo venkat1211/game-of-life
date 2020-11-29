@@ -1,5 +1,5 @@
-node('HRMS&&QA') {
-	//SCM project clone
+node('HRMS && QA') {
+    //scm project clone
     stage('git') {
         git 'https://github.com/venkat1211/game-of-life.git'
     }
@@ -8,12 +8,11 @@ node('HRMS&&QA') {
         sh 'mvn clean package'
     }
 
-    stage('testresults') {
+    stage('Testresults') {
         junit 'gameoflife-web/target/surefire-reports/*.xml'
-
     }
 
     stage('archiveArtifacts') {
-        archiveArtifacts artifacts: 'gameoflife-web/target/*war', followSymlinks: false
+        archiveArtifacts artifacts: 'gameoflife-web/target/*war', followSymlinks: false        
     }
 }
