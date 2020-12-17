@@ -3,7 +3,7 @@
   - name: copy deployment file to kubernetes master 
     copy:
       src: deployment.yaml
-      dest: /home/jenkin/
+      dest: /home/jenkins/
   - name: change per mission
     file:
       path: /home/jenkins/deployment.yaml
