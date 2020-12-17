@@ -7,7 +7,7 @@
   - name: change per mission
     file:
       path: /root/deployment.yaml
-      mode: u+rw,g-wx,o-rwx
+      mode: '777'
 
   - name: Create a Deployment by reading the definition from a local file
     command: kubectl apply -f /root/deployment.yaml
