@@ -22,12 +22,12 @@ spec:
         version: "1.0"
     spec:
       containers:
-        - image: qualitythought/gameoflife:07112020
+        - image: venkatesh1211/gameoflife:docker_tag
           name: gol-dev
           ports:
             - containerPort: 8080
               protocol: TCP
-    
+
 ---
 apiVersion: v1
 kind: Service
