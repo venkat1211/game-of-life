@@ -3,6 +3,6 @@
   - name: copy deployment file to kubernetes master 
     copy:
       src: deployment.yaml
-      dest: /home/jenkins/
+      dest: /root/
   - name: Create a Deployment by reading the definition from a local file
-    command: kubectl apply -f /home/jenkins/deployment.yaml
+    command: kubectl apply -f /root/deployment.yaml
